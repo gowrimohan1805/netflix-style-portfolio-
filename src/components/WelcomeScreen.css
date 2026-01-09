@@ -1,0 +1,118 @@
+.welcome-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.welcome-container.fade-out {
+    opacity: 0;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+.anim-text {
+    display: flex;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #E50914;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif;
+
+    /* The "ta-dum" zoom effect */
+    animation: zoom-in-out 3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+}
+
+.anim-text span {
+    display: inline-block;
+    opacity: 0;
+    animation: appear 0.1s forwards;
+}
+
+/* Stagger letters slightly for that "ribbon" feel, or just make them appear */
+.anim-text span:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.anim-text span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.anim-text span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.anim-text span:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.anim-text span:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.anim-text span:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.anim-text span:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.anim-text span:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.anim-text span:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.anim-text span:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+.anim-text span:nth-child(11) {
+    animation-delay: 0.6s;
+}
+
+.anim-text span:nth-child(12) {
+    animation-delay: 0.65s;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoom-in-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(20);
+        /* Fly through the letters */
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .anim-text {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+}

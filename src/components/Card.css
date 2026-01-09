@@ -1,0 +1,137 @@
+.card-container {
+    flex: 0 0 250px;
+    /* Fixed width cards */
+    margin-right: 10px;
+    background-color: var(--bg-card);
+    border-radius: 4px;
+    position: relative;
+    transition: transform 0.3s ease, z-index 0s 0.3s;
+    /* Delay z-index reset */
+    cursor: pointer;
+    overflow: hidden;
+    height: 140px;
+    /* Aspect ratio roughly 16:9 */
+}
+
+.card-container:hover {
+    transform: scale(1.5);
+    z-index: 100;
+    transition: transform 0.3s ease, z-index 0s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Image State */
+.card-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-title-overlay {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Hover Content State */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: #181818;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card-container:hover .card-content {
+    opacity: 1;
+    transform: translateY(100%);
+    /* Need to handle positioning logic for expansion */
+}
+
+/* NOTE: Simple CSS scaling often clips content or messes up layout flow. 
+   A robust Netflix card expansion usually involves mounting a portal or absolute positioning 
+   outside the flow. For simplicity here, we'll keep the scale effect contained 
+   but maybe just reveal detail on hover within the scaled box.
+*/
+
+.card-container:hover {
+    height: auto;
+    /* Allow growth */
+}
+
+.card-container:hover .card-image-wrapper {
+    height: 140px;
+    /* Keep image height fixed */
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.icon-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icon-btn.filled {
+    background: white;
+    color: black;
+    border: none;
+}
+
+.icon-btn:hover {
+    border-color: white;
+}
+
+.card-meta {
+    font-size: 0.7rem;
+    color: #fff;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.match-score {
+    color: #46d369;
+    /* Netflix Match Green */
+}
+
+.age-rating {
+    border: 1px solid #666;
+    padding: 0 4px;
+    font-size: 0.6rem;
+}
+
+.card-tags {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
