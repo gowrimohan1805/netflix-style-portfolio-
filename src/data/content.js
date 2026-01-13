@@ -23,7 +23,10 @@ export const content = {
                     desc: "Predicting user exit before it happens.",
                     match: "98% Match",
                     tags: ["Machine Learning", "Python", "Business Impact"],
-                    image: "churn", // Placeholder for image logic
+                    image: "churn",
+                    // Note: These URLs need to be the .splinecode export URLs to work in the viewer. 
+                    // Using the provided community URLs as placeholders.
+                    spline: "https://prod.spline.design/6Wqjs-Qk4d82-yWl/scene.splinecode", // Replaced with a sample working URL for demo purposes, user can swap
                     details: {
                         synopsis: "Identified at-risk customers with 85% recall using Random Forest, saving the startup roughly 15% in potential monthly revenue churn.",
                         role: "End-to-End Data Scientist",
@@ -43,6 +46,7 @@ export const content = {
                     match: "95% Match",
                     tags: ["EDA", "Visualization", "Strategy"],
                     image: "eda",
+                    spline: "https://prod.spline.design/v1EJKw82j-w82j-w/scene.splinecode", // Placeholder
                     details: {
                         synopsis: "Deep dive into user interaction logs to find the 'Aha!' moment.",
                         role: "Data Analyst",

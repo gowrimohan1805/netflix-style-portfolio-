@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Play, Info } from 'lucide-react';
+import SplineScene from './SplineScene';
 import './Card.css';
 
 const Card = ({ item }) => {
@@ -30,10 +31,19 @@ const Card = ({ item }) => {
     return (
         <div className="card-container" onClick={handleClick}>
             <div className="card-image-wrapper">
-                {/* Placeholder for real image or gradient */}
-                <div className="card-image" style={bgStyle}>
-                    {!item.image?.startsWith('http') && <span className="card-title-overlay">{item.title}</span>}
-                </div>
+                {item.spline ? (
+                    <div className="card-image spline-card">
+                        <SplineScene url={item.spline} />
+                    </div>
+                ) : (
+                    <div className="card-image" style={bgStyle}>
+                        {!item.image?.startsWith('http') && (
+                            <div className="placeholder-content">
+                                <span className="card-title-overlay">{item.title}</span>
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
 
             <div className="card-content">

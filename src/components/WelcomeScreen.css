@@ -88,24 +88,30 @@
 }
 
 @keyframes appear {
-    to {
+    0% {
+        opacity: 0;
+        transform: scale(3);
+    }
+
+    100% {
         opacity: 1;
+        transform: scale(1);
     }
 }
 
 @keyframes zoom-in-out {
     0% {
         transform: scale(1);
+    }
+
+    85% {
+        transform: scale(1);
         opacity: 1;
     }
 
-    60% {
-        transform: scale(1.1);
-    }
-
     100% {
-        transform: scale(20);
-        /* Fly through the letters */
+        transform: scale(4);
+        /* Dramatic zoom out to camera */
         opacity: 0;
     }
 }
